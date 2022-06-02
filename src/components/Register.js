@@ -17,7 +17,7 @@ const Register = (props) => {
 
     function handleRegistration(e) {
         e.preventDefault();
-        props.onRegistered(email, password)
+        props.onRegistered({email, password})
     }
 
     return (

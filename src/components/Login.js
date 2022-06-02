@@ -17,7 +17,7 @@ const Login = (props) => {
     // Создаем функцию реакцию на сабмит, которая перебрасывает на функцию логина в app
     function handleAuthorization(e) {
         e.preventDefault();
-        props.onAuthorization(email, password)
+        props.onAuthorization({email, password})
     }
 
     return (
@@ -31,6 +31,7 @@ const Login = (props) => {
                     maxLength="30"
                     type="email"
                     onChange={handleEmailChange}
+                    value={email}
                 />
                 <input
                     className="login__input"
@@ -39,6 +40,7 @@ const Login = (props) => {
                     maxLength="30"
                     type="password"
                     onChange={handlePasswordChange}
+                    value={password}
                 />
                 <button className="login__submit-register-button">Войти</button>
             </form>

@@ -111,7 +111,7 @@ function App(props) {
   /* Логика авторизации */
 
   // Зарегистрироваться
-  function handleRegister(email, password) {
+  function handleRegister({email, password}) {
     auth.registration(email, password)
       .then(() => {
         setIsRegistered(true);
@@ -125,7 +125,7 @@ function App(props) {
       })
   };
 
-  function handleLogin(email, password) {
+  const handleLogin = ({email, password}) => {
     auth.authorization(email, password)
       .then((res) => {
         // Если успешно авторизовался - открываем доступ
@@ -144,7 +144,7 @@ function App(props) {
 
   // Проверить токен
   useEffect(() => {
-    function tokenCheck() {
+    const tokenCheck = () => {
       const jwt = localStorage.getItem('jwt');
       if (jwt) {
         auth.checkTokenValidity(jwt)
@@ -161,7 +161,7 @@ function App(props) {
     tokenCheck();
   }, [history, loggedIn])
 
-  function handleSignOut() {
+  const handleSignOut = () => {
     localStorage.removeItem('jwt');
     setLoggedIn(false);
     history.push('/sign-in');
