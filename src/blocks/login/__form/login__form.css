@@ -1,0 +1,9 @@
+.login__form {
+    max-width: 358px;
+}
+
+@media screen and (max-width: 380px) {
+    .login__form {
+        max-width: 260px;
+    }
+}

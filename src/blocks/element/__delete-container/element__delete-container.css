@@ -1,0 +1,23 @@
+.element__delete-container {
+    max-width: 18px;
+    width: 100%;
+    max-height: 19px;
+    height: 100%;
+    align-items: center;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 20px;
+    right: 20px;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    font-size:0;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.element__delete-container:hover {
+    opacity: 0.6;
+}

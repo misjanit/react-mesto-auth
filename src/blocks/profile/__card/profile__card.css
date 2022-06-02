@@ -1,0 +1,15 @@
+.profile__card {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0 auto 0;
+    padding-left: 30px;
+    justify-content: center;
+}
+
+@media screen and (max-width: 920px) {
+    .profile__card {
+        text-align: center;
+        padding: 0;
+    }
+}
+

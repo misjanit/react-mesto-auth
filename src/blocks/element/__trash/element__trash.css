@@ -1,0 +1,8 @@
+.element__trash {
+    width: 100%;
+    height: 100%;
+    background-image: url(../../../images/Trash.svg);
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}

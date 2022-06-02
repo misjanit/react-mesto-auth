@@ -1,0 +1,5 @@
+.header__main-header-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}

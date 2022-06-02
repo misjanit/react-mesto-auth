@@ -1,0 +1,30 @@
+.login__submit-register-button {
+    width: 358px;
+    height: 50px;
+
+    margin: 186px auto 15px auto;
+    padding: 0;
+    
+    border: none;
+    cursor: pointer;
+    transition: .3s ease;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+
+    border-radius: 2px;
+}
+
+.login__submit-register-button:hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 380px) {
+    .login__submit-register-button {
+        max-width: 260px;
+        height: 46px;
+    }
+}
+

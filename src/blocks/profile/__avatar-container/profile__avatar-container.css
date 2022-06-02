@@ -1,0 +1,21 @@
+.profile__avatar-container {
+    max-width: 120px;
+    width: 100%;
+    max-height: 120px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url(../../../images/edit-avatar.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 26px;
+    background-color: transparent;
+    border: none;
+}
+
+@media screen and (max-width: 920px) {
+    .profile__avatar-container {
+        margin: 0px auto;
+        
+    }
+}

@@ -1,0 +1,6 @@
+.popup__modal {
+    display: flex;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}

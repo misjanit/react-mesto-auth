@@ -1,0 +1,20 @@
+.header__button-icon {
+    width: 24px;
+    height: 24px;
+    margin: 31px 30px 31px auto;
+
+    background-image: url(../../../images/menu.png);
+    
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    background-color: transparent;
+
+    border: none;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.header__button-icon:hover {
+    opacity: 0.6;
+}

@@ -1,0 +1,7 @@
+.login__log-in-button {
+    background-color: transparent;
+    border: none;
+
+    cursor: pointer;
+    color: white;
+}
