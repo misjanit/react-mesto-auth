@@ -4,4 +4,10 @@
 
     cursor: pointer;
     color: white;
+
+    transition: .3s ease;
+}
+
+.login__log-in-button:hover {
+    opacity: 0.6;
 }

@@ -1,20 +1,22 @@
 .login__log-in-button-container {
     max-width: 358px;
     width: 100%;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 
     background-color: transparent;
     border: none;
-    transition: .3s ease;
     
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
 
     text-align: center;
-}
-
-.login__log-in-button-container:hover {
-    opacity: 0.6;
 }
 
 @media screen and (max-width: 380px) {

@@ -16,7 +16,7 @@ import InfoToolTip from './InfoToolTip';
 import ProtectedRoute from './ProtectedRoute';
 import * as auth from '../utils/auth';
 
-function App(props) {
+function App() {
   const history = useHistory();
 
   // создаем стейт переменные
@@ -111,7 +111,7 @@ function App(props) {
   /* Логика авторизации */
 
   // Зарегистрироваться
-  function handleRegister({email, password}) {
+  function handleRegister({ email, password }) {
     auth.registration(email, password)
       .then(() => {
         setIsRegistered(true);
@@ -119,13 +119,13 @@ function App(props) {
         history.push('/sign-in')
       })
       .catch((err) => {
-        setIsInfoToolTipOpen(false);
         setIsRegistered(false);
+        setIsInfoToolTipOpen(false);       
         console.log(err);
       })
   };
 
-  const handleLogin = ({email, password}) => {
+  const handleLogin = ({ email, password }) => {
     auth.authorization(email, password)
       .then((res) => {
         // Если успешно авторизовался - открываем доступ
@@ -169,64 +169,33 @@ function App(props) {
 
   return (
     <CurrentUserContext.Provider value={currentUser} >
-      <Switch>
-        <div className='page' style={{ minHeight: "100vh" }}>
 
-          <Header email={email} onSignOut={handleSignOut} />
+      <div className='page'>
 
-          <Route path="/main" >
+        <Header email={email} onSignOut={handleSignOut} />
 
-            <ProtectedRoute
-              component={Main}
-              onEditAvatar={handleEditAvatarClick}
-              onEditProfile={handleEditProfileClick}
-              onAddPlace={handleAddPlaceClick}
-              onCardClick={handleCardClick}
-              onCardLike={handleCardLike}
-              onCardDelete={handleCardDelete}
-              cards={cards}
-              loggedIn={loggedIn}
-              exact
-            />
+        <Switch>
 
-            <EditAvatarPopup
-              isOpen={isEditAvatarPopupOpen}
-              onClose={closeAllPopups}
-              onUpdateAvatar={handleUpdateAvatar}
-            />
-
-            <EditProfilePopup
-              isOpen={isEditProfilePopupOpen}
-              onClose={closeAllPopups}
-              onUpdateUser={handleUpdateUser}
-            />
-
-            <AddPlacePopup
-              isOpen={isAddPlacePopupOpen}
-              onClose={closeAllPopups}
-              onAddPlace={handleAddPlaceSubmit}
-            />
-
-            <ImagePopup
-              card={selectedCard}
-              onClose={closeAllPopups}
-            />
-          </Route>
+          <ProtectedRoute
+            component={Main}
+            onEditAvatar={handleEditAvatarClick}
+            onEditProfile={handleEditProfileClick}
+            onAddPlace={handleAddPlaceClick}
+            onCardClick={handleCardClick}
+            onCardLike={handleCardLike}
+            onCardDelete={handleCardDelete}
+            cards={cards}
+            loggedIn={loggedIn}
+            exact
+            path="/"
+          />
 
           <Route path="/sign-in">
-            <Login
-              onAuthorization={handleLogin}
-            />
+            <Login onAuthorization={handleLogin} />
           </Route>
 
           <Route path="/sign-up">
-            <Register
-              onRegistered={handleRegister} />
-            <InfoToolTip
-              isOpen={isInfoToolTipOpen}
-              onRegistered={isRegistered}
-              onClose={closeAllPopups}
-            />
+            <Register onRegistered={handleRegister} />
           </Route>
 
           <PopupWithForm
@@ -236,16 +205,48 @@ function App(props) {
             buttonText="Да"
           />
 
-          <Route exact path="/">
-            {loggedIn ? <Redirect to="/main" /> : <Redirect to="/sign-in" />}
+          <Route>
+            {loggedIn ? <Redirect to="/" /> : <Redirect to="/sign-in" />}
           </Route>
 
-        </div>
-      </Switch>
+        </Switch>
+
+        <InfoToolTip
+          isOpen={isInfoToolTipOpen}
+          onRegistered={isRegistered}
+          onClose={closeAllPopups}
+          isRegistered={isRegistered}
+        />
+
+        <EditAvatarPopup
+          isOpen={isEditAvatarPopupOpen}
+          onClose={closeAllPopups}
+          onUpdateAvatar={handleUpdateAvatar}
+        />
+
+        <EditProfilePopup
+          isOpen={isEditProfilePopupOpen}
+          onClose={closeAllPopups}
+          onUpdateUser={handleUpdateUser}
+        />
+
+        <AddPlacePopup
+          isOpen={isAddPlacePopupOpen}
+          onClose={closeAllPopups}
+          onAddPlace={handleAddPlaceSubmit}
+        />
+
+        <ImagePopup
+          card={selectedCard}
+          onClose={closeAllPopups}
+        />
+
+
+      </div>
 
       <Footer />
 
-    </CurrentUserContext.Provider>
+    </CurrentUserContext.Provider >
   )
 }
 

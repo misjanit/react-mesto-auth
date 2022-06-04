@@ -15,24 +15,24 @@ import logo from '../images/Logo.svg';
 // header__button-icon - иконка меню
 // header__button-icon_close - вместо меню крестик
 
-const Header = ({email, onSignOut, loggedIn}) => {
+const Header = ({ email, onSignOut, loggedIn }) => {
   return (
     <header className="header">
       <div className='header__main-header-wrapper'>
         <img src={logo} className="header__logo" alt="Логотип проекта" />
         <div className='header__wrapper'>
-          <h3 className={ loggedIn ? 'header__email_unactive' : 'header__email' }>{email}</h3>
           <Switch>
             <Route exact path="/sign-up">
               <Link to="/sign-in" className="header__login-button">Войти</Link>
             </Route>
             <Route exact path="/sign-in">
-              <Link to="/sign-up" className="header__login-button">Зарегистрироваться</Link>
+              <Link to="/sign-up" className="header__login-button">Регистрация</Link>
             </Route>
-            <Route exact path="/main">
-              <Link to="/main" className="header__login-button header__login-button_logged-in" onClick={onSignOut}>Выйти</Link>
-            </Route>      
-          </Switch>              
+            <Route exact path="/">
+              <h3 className={loggedIn ? 'header__email_unactive' : 'header__email'}>{email}</h3>
+              <Link to="/" className="header__login-button header__login-button_logged-in" onClick={onSignOut}>Выйти</Link>
+            </Route>
+          </Switch>
         </div>
       </div>
     </header>

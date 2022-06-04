@@ -1,0 +1,9 @@
+.login__log-in-caption {
+    display: inline;
+    margin: 0;
+
+    font-weight: 400;
+
+    text-decoration: none;
+    color: white;
+}

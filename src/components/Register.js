@@ -47,8 +47,9 @@ const Register = (props) => {
                 <button className="login__submit-register-button">Зарегистрироваться</button>
             </form>
             <div className="login__log-in-button-container">
-                <Link to="sign-in">
-                    <button className="login__log-in-button">Уже зарегистрированы? Войти</button>
+            <h4 className="login__log-in-caption">Уже зарегистрированы?</h4>
+                <Link to="sign-in">                  
+                    <button className="login__log-in-button">Войти</button>
                 </Link>
             </div>
         </div>

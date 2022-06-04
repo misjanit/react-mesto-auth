@@ -10,6 +10,7 @@
 @import url(./blocks/login/__input/login__input.css);
 @import url(./blocks/login/__log-in-button-container/login__log-in-button-container.css);
 @import url(./blocks/login/__log-in-button/login__log-in-button.css);
+@import url(./blocks/login/__log-in-caption/login__log-in-caption.css);
 @import url(./blocks/login/__submit-register-button/login__submit-register-button.css);
 
 /* Общие классы для попапов */
