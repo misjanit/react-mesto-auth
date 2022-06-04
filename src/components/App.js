@@ -120,7 +120,7 @@ function App() {
       })
       .catch((err) => {
         setIsRegistered(false);
-        setIsInfoToolTipOpen(false);       
+        setIsInfoToolTipOpen(true);       
         console.log(err);
       })
   };
@@ -159,7 +159,7 @@ function App() {
       }
     };
     tokenCheck();
-  }, [history, loggedIn])
+  }, [])
 
   const handleSignOut = () => {
     localStorage.removeItem('jwt');
