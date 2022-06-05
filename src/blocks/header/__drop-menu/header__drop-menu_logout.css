@@ -1,0 +1,30 @@
+.header__drop-menu_logout {
+    display: none;
+}
+
+.header__drop-menu_logout:hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 600px) {
+    .header__drop-menu_logout {
+        display: block;
+
+        width: auto;
+        height: 22px;
+        margin: 0 auto;
+        padding: 0;
+
+        background-color: transparent;
+        color: white;
+
+        border: none;
+        cursor: pointer;
+        transition: .3s ease;
+
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        text-decoration: none;
+    }
+}

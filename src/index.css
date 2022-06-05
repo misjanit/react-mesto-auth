@@ -68,6 +68,10 @@
 @import url(./blocks/header/__email/header__email.css);
 @import url(./blocks/header/__email/header__email_unactive.css);
 
+@import url(./blocks/header/__drop-menu/header__drop-menu_logout.css);
+@import url(./blocks/header/__drop-menu/header__drop-menu_email.css);
+@import url(./blocks/header/__logout-button/header__logout-button.css);
+
 /* Классы профиля */
 @import url(./blocks/profile/profile.css);
 @import url(./blocks/profile/__info/profile__info.css);

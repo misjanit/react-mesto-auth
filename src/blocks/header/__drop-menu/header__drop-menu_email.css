@@ -1,0 +1,25 @@
+.header__drop-menu_email {
+    display: none;
+}
+
+.header__drop-menu_emaill:hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 600px) {
+    .header__drop-menu_email {
+        min-width: 20px;
+        max-width: 500px;
+        height: 22px;
+        margin: 0 auto 18px auto;
+        padding: 0;
+        display: block;
+
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+
+        cursor: pointer;
+        transition: .3s ease;
+    }
+}

@@ -19,7 +19,6 @@
 
 @media screen and (max-width: 600px) {
     .header__email {
-        font-size: 14px;
-        /* Исходя из формулировки задания мобилка делается по желанию, я очень хотел сделать, но не успеваю( */
+        display: none;
     }  
 }
